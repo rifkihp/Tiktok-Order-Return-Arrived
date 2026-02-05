@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QrCreateFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/qrImageView_qcf"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/icon_qr_default" />
+
+        <EditText
+            android:id="@+id/urlEditText_qcf"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Masukan No. Resi"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/qrImageView_qcf" />
+
+        <Button
+            android:id="@+id/createButton_qcf"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="#5A595B"
+            android:text="Cari..."
+            android:textColor="#FFFFFF"
+            app:icon="@drawable/icon_open"
+            app:iconGravity="textStart"
+            app:iconPadding="15dp"
+            app:iconTint="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="@+id/urlEditText_qcf"
+            app:layout_constraintStart_toStartOf="@+id/urlEditText_qcf"
+            app:layout_constraintTop_toBottomOf="@+id/urlEditText_qcf" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
