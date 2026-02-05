@@ -1,7 +1,7 @@
-package com.example.tiktokorderreturn.data;
+package com.example.tiktokorderreturnarrived.data;
 
 
-import com.example.tiktokorderreturn.libs.CommonUtilities;
+import com.example.tiktokorderreturnarrived.libs.CommonUtilities;
 
 import java.security.cert.CertificateException;
 

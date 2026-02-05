@@ -5,11 +5,11 @@
     }
 
 android {
-    namespace = "com.example.tiktokorderreturn"
+    namespace = "com.example.tiktokorderreturnarrived"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.tiktokorderreturn"
+        applicationId = "com.example.tiktokorderreturnarrived"
         minSdk = 24
         targetSdk = 35
         versionCode = 1

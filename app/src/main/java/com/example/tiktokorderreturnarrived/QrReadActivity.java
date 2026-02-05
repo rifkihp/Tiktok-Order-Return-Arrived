@@ -1,35 +1,27 @@
-package com.example.tiktokorderreturn;
+package com.example.tiktokorderreturnarrived;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.tiktokorderreturn.adapter.ItemListAdapter;
-import com.example.tiktokorderreturn.data.RestApi;
-import com.example.tiktokorderreturn.data.RetroFit;
-import com.example.tiktokorderreturn.model.ResponseDetailOrder;
-import com.example.tiktokorderreturn.model.ResponseOrderReturn;
-import com.example.tiktokorderreturn.model.data;
-import com.example.tiktokorderreturn.model.itemListOrder;
-import com.example.tiktokorderreturn.model.orders;
-import com.google.zxing.BarcodeFormat;
-import com.google.zxing.MultiFormatWriter;
-import com.google.zxing.WriterException;
-import com.google.zxing.common.BitMatrix;
-import com.journeyapps.barcodescanner.BarcodeEncoder;
+import com.example.tiktokorderreturnarrived.adapter.ItemListAdapter;
+import com.example.tiktokorderreturnarrived.data.RestApi;
+import com.example.tiktokorderreturnarrived.data.RetroFit;
+import com.example.tiktokorderreturnarrived.model.ResponseDetailOrder;
+import com.example.tiktokorderreturnarrived.model.ResponseOrderReturn;
+import com.example.tiktokorderreturnarrived.model.data;
+import com.example.tiktokorderreturnarrived.model.itemListOrder;
+import com.example.tiktokorderreturnarrived.model.orders;
 
 import java.util.ArrayList;
 import java.util.Objects;

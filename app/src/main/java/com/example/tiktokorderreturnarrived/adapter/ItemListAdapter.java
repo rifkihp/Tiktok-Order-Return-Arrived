@@ -1,4 +1,4 @@
-package com.example.tiktokorderreturn.adapter;
+package com.example.tiktokorderreturnarrived.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -8,8 +8,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.example.tiktokorderreturn.R;
-import com.example.tiktokorderreturn.model.itemListOrder;
+import com.example.tiktokorderreturnarrived.R;
+import com.example.tiktokorderreturnarrived.model.itemListOrder;
 
 import java.util.ArrayList;
 

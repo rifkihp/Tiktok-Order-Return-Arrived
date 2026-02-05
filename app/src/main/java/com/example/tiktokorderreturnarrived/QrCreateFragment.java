@@ -1,22 +1,12 @@
-package com.example.tiktokorderreturn;
+package com.example.tiktokorderreturnarrived;
 
-import android.annotation.SuppressLint;
-import android.app.AlertDialog;
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,19 +14,15 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.example.tiktokorderreturn.data.RestApi;
-import com.example.tiktokorderreturn.data.RetroFit;
-import com.example.tiktokorderreturn.model.ResponseCheckOrderReturn;
-import com.example.tiktokorderreturn.model.ResponseOrderReturn;
+import com.example.tiktokorderreturnarrived.data.RestApi;
+import com.example.tiktokorderreturnarrived.data.RetroFit;
+import com.example.tiktokorderreturnarrived.model.ResponseCheckOrderReturn;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.journeyapps.barcodescanner.BarcodeEncoder;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.Objects;
 
 import retrofit2.Call;

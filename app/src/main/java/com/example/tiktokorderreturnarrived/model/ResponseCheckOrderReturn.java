@@ -1,4 +1,4 @@
-package com.example.tiktokorderreturn.model;
+package com.example.tiktokorderreturnarrived.model;
 import com.google.gson.annotations.SerializedName;
 
 public class ResponseCheckOrderReturn {

@@ -1,20 +1,14 @@
-package com.example.tiktokorderreturn.data;
+package com.example.tiktokorderreturnarrived.data;
 
-import com.example.tiktokorderreturn.model.ResponseCheckOrderReturn;
-import com.example.tiktokorderreturn.model.ResponseDetailOrder;
-import com.example.tiktokorderreturn.model.ResponseSaveVideoPacking;
-import com.example.tiktokorderreturn.model.ResponseOrderReturn;
-import com.example.tiktokorderreturn.model.ResponseUploadDokumen;
+import com.example.tiktokorderreturnarrived.model.ResponseCheckOrderReturn;
+import com.example.tiktokorderreturnarrived.model.ResponseDetailOrder;
+import com.example.tiktokorderreturnarrived.model.ResponseOrderReturn;
 
-import okhttp3.MultipartBody;
-import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
-import retrofit2.http.Multipart;
 import retrofit2.http.POST;
-import retrofit2.http.Part;
 import retrofit2.http.Query;
 
 public interface RestApi {

@@ -1,9 +1,8 @@
-package com.example.tiktokorderreturn.model;
+package com.example.tiktokorderreturnarrived.model;
 
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 public class itemListOrder implements Serializable {
 

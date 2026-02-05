@@ -1,7 +1,6 @@
-package com.example.tiktokorderreturn;
+package com.example.tiktokorderreturnarrived;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -18,10 +17,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.tiktokorderreturn.data.RestApi;
-import com.example.tiktokorderreturn.data.RetroFit;
-import com.example.tiktokorderreturn.model.ResponseCheckOrderReturn;
-import com.example.tiktokorderreturn.model.ResponseOrderReturn;
+import com.example.tiktokorderreturnarrived.data.RestApi;
+import com.example.tiktokorderreturnarrived.data.RetroFit;
+import com.example.tiktokorderreturnarrived.model.ResponseCheckOrderReturn;
 import com.google.zxing.ResultPoint;
 import com.journeyapps.barcodescanner.BarcodeCallback;
 import com.journeyapps.barcodescanner.BarcodeResult;

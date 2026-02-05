@@ -1,4 +1,4 @@
-package com.example.tiktokorderreturn;
+package com.example.tiktokorderreturnarrived;
 
 public interface QRCodeFoundListener {
     void onQRCodeFound(String qrCode);

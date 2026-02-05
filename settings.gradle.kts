@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Tiktok Order Return"
+rootProject.name = "Tiktok Order Return Arrived"
 include(":app")
  
