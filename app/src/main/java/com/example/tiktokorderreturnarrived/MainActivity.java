@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
                 } else if (id == R.id.itemSettings) {
                     bottomNavigationView.getMenu().findItem(R.id.itemSettings).setChecked(true);
-                    replaceFragment(new QrOptionsFragment());
+                    replaceFragment(new WebviewFragment());
 
                 }
                 return false;

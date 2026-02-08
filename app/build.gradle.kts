@@ -36,6 +36,8 @@ android {
     }
     buildFeatures {
         compose = true
+        viewBinding = true
+
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.3"
@@ -81,4 +83,6 @@ dependencies {
 
     implementation(libs.androidx.camera.view)
     implementation(libs.androidx.camera.extensions)
+    implementation(libs.android.advancedwebview)
+    implementation (libs.androidx.swiperefreshlayout)
 }

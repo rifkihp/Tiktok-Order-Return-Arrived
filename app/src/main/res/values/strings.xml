@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Tiktok Order Return Arrived</string>
+    <string name="periksa_koneksi">Please check your connection and try again</string>
+    <string name="coba_lagi">Please try again</string>
 </resources>
