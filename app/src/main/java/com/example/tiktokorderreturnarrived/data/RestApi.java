@@ -1,8 +1,8 @@
 package com.example.tiktokorderreturnarrived.data;
 
-import com.example.tiktokorderreturnarrived.model.ResponseCheckOrderReturn;
 import com.example.tiktokorderreturnarrived.model.ResponseDetailOrder;
 import com.example.tiktokorderreturnarrived.model.ResponseOrderReturn;
+import com.example.tiktokorderreturnarrived.model.ResponseSetOrderReturnArrived;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -13,9 +13,10 @@ import retrofit2.http.Query;
 
 public interface RestApi {
 
-    @GET("order/checkOrderReturn")
-    Call<ResponseCheckOrderReturn> checkOrderReturn(
-            @Query("tracking_number") String tracking_number
+    @FormUrlEncoded
+    @POST("order/setOrderReturnArrived")
+    Call<ResponseSetOrderReturnArrived> setOrderReturnArrived(
+            @Field("tracking_number") String tracking_number
     );
 
     @GET("order/getOrderReturn")

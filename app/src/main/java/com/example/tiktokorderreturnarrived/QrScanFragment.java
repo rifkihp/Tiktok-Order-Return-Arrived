@@ -2,7 +2,6 @@ package com.example.tiktokorderreturnarrived;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -19,7 +18,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.tiktokorderreturnarrived.data.RestApi;
 import com.example.tiktokorderreturnarrived.data.RetroFit;
-import com.example.tiktokorderreturnarrived.model.ResponseCheckOrderReturn;
+import com.example.tiktokorderreturnarrived.model.ResponseSetOrderReturnArrived;
 import com.google.zxing.ResultPoint;
 import com.journeyapps.barcodescanner.BarcodeCallback;
 import com.journeyapps.barcodescanner.BarcodeResult;
@@ -48,6 +47,8 @@ public class QrScanFragment extends Fragment {
 
 
     MediaPlayer mp_start;
+    MediaPlayer mp_error;
+    MediaPlayer mp_success;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,6 +56,9 @@ public class QrScanFragment extends Fragment {
 
         view = inflater.inflate(R.layout.fragment_qr_scan, container, false);
         mp_start = MediaPlayer.create(getActivity(), R.raw.start);
+        mp_success = MediaPlayer.create(getActivity(), R.raw.stop);
+        mp_error = MediaPlayer.create(getActivity(), R.raw.warn);
+
         barcodeViewSetting();
         barcodeViewStart();
 
@@ -75,7 +79,7 @@ public class QrScanFragment extends Fragment {
                         compoundBarcodeView.setTorchOn();
                     }
                 } else {
-                    Toast.makeText(getActivity(),"フラッシュライトが有効ではありません。",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(),"Fungsi tidak tersedia.",Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -128,32 +132,26 @@ public class QrScanFragment extends Fragment {
                 mp_start.start();
                 showLoadingDialog();
                 RestApi api = RetroFit.getInstanceRetrofit();
-                Call<ResponseCheckOrderReturn> checkPesanan = api.checkOrderReturn(barcodeResult.getText());
-                checkPesanan.enqueue(new Callback<>() {
+                Call<ResponseSetOrderReturnArrived> setOrderReturnArrived = api.setOrderReturnArrived(barcodeResult.getText());
+                setOrderReturnArrived.enqueue(new Callback<>() {
                     @Override
-                    public void onResponse(@NonNull Call<ResponseCheckOrderReturn> call, @NonNull Response<ResponseCheckOrderReturn> response) {
+                    public void onResponse(@NonNull Call<ResponseSetOrderReturnArrived> call, @NonNull Response<ResponseSetOrderReturnArrived> response) {
                         boolean success = Objects.requireNonNull(response.body()).getSuccess();
+                        String message = Objects.requireNonNull(response.body()).getMessage();
                         dismissLoadingDialog();
                         if(success) {
-
-                            String orderId         = Objects.requireNonNull(response.body()).getOrderId();
-                            String tracking_number = Objects.requireNonNull(response.body()).getTracking_number();
-                            String platform        = Objects.requireNonNull(response.body()).getPlatform();
-
-                            Intent intent = new Intent(getActivity().getApplicationContext(), QrReadActivity.class);
-                            intent.putExtra("orderId", orderId);
-                            intent.putExtra("tracking_number", tracking_number);
-                            intent.putExtra("platform", platform);
-                            startActivity(intent);
-
+                            barcodeViewStart();
+                            mp_success.start();
+                            Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
                         } else {
-                            String message = Objects.requireNonNull(response.body()).getMessage();
+                            mp_error.start();
                             showErrorDialog(message);
                         }
                     }
                     @Override
-                    public void onFailure(@NonNull Call<ResponseCheckOrderReturn> call, @NonNull Throwable t) {
+                    public void onFailure(@NonNull Call<ResponseSetOrderReturnArrived> call, @NonNull Throwable t) {
                         dismissLoadingDialog();
+                        mp_error.start();
                         showErrorDialog("PROSES GAGAL, COBA LAGI!");
                     }
                 });
@@ -184,6 +182,7 @@ public class QrScanFragment extends Fragment {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
         alertDialogBuilder.setTitle("Error");
         alertDialogBuilder.setMessage(errorMessage);
+        alertDialogBuilder.setCancelable(false);
         alertDialogBuilder.setPositiveButton("OK",  new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

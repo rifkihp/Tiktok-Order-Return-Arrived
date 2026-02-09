@@ -5,18 +5,15 @@
         android:id="@+id/itemCreate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:icon="@drawable/item_create"
-        android:title="QRコードを作成" />
+        android:title="Cari" />
     <item
         android:id="@+id/itemScan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:icon="@drawable/item_scan"
-        android:title="Record" />
+        android:title="Scan" />
     <item
         android:id="@+id/itemSettings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:icon="@drawable/item_settings"
-        android:title="設定" />
+        android:title="Data" />
 </menu>
